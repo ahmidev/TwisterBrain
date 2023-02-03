@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
-import { Component, ElementRef, Input, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
 import { Question } from 'src/app/question.interface';
 import { Player } from '../models/player-model';
@@ -38,7 +36,7 @@ export class QuestionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionService.getEasyQuestion().subscribe((data) => {
+    this.questionService.getEasyQuestion().subscribe((data:any) => {
       this.question = data.results[0].question;
       this.category = data.results[0].category;
       this.correct_answer = data.results[0].correct_answer;
