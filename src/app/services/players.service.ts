@@ -69,6 +69,11 @@ export class PlayersService {
 
   }
   winnerPlayer() {
+    const winner = this.players.sort((a,b)=> {
+      return b.score - a.score;
+    })
+    // console.log("Vainqueur" + winner[0]);
+    return "Vainqueur " + winner[0].pseudo
 
     // renoyer le joueur qui a le plus de points
     //parcourir tableau de joueur en integrant conditions

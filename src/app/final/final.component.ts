@@ -23,6 +23,7 @@ export class FinalComponent implements OnInit {
 constructor(private playersService: PlayersService)  {
     }
   ngOnInit(): void {
+   console.log(this.playersService.winnerPlayer());
     
    console.log(this.playersService.players)
 
@@ -48,4 +49,6 @@ constructor(private playersService: PlayersService)  {
 
     });
   }
+
+
 }
