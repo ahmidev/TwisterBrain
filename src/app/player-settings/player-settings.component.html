@@ -20,8 +20,8 @@
         <div class="inputPseudo">
           <label for="pseudo">Pseudo</label>
           <div class="inputField">
-            <p *ngIf="form.get('pseudo')?.errors">Votre pseudo  doit contenir au <br> minimum 2 caractères</p>
-            <input type="text" formControlName="pseudo" #pseudo placeholder="inscrire votre pseudo" />
+            <p *ngIf="form.get('pseudo')?.errors && form.get('pseudo')?.touched">Votre pseudo  doit contenir au <br> minimum 2 caractères</p>
+            <input type="text" formControlName="pseudo" #pseudo placeholder="Inscrire votre pseudo" />
           </div>
         </div>
         <button class="btnValid" type="submit" [disabled]="form.invalid" (click)="addPlayers(pseudo, select)">Ajouter</button>

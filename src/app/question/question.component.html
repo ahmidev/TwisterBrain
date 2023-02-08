@@ -1,4 +1,5 @@
 <section class="game_component">
+  <p class="parties">{{partie}}/10</p>
   <div class="question">
     <div class="theme">
       <p>{{ category }}</p>
@@ -8,22 +9,22 @@
     </div>
   </div>
   <div id="progressBar">
-    <div class="bar"></div>
+    <p id="timeLeft">{{timeLeft}} </p>
   </div>
-  <div class="capsule">
-    <div class="answers">
-      <!-- <div (click)="reponse()" appChangeColor>{{ rep }}</div> -->
-      <div class="answer1_2" #boxParent>
-        <div class="answer1 box" #box #box1 (click)="reponse([box1,box2,box3,box4],box1)">{{ incorrect_answers[0] }}</div>
-        <div class="answer2 box" #box #box2 (click)="reponse([box1,box2,box3,box4], box2)">{{ incorrect_answers[1] }}</div>
-      </div>
-      <div class="answer3_4">
-        <div class="answer3 box" #box #box3 (click)="reponse([box1,box2,box3,box4], box3)">{{ incorrect_answers[2] }}</div>
-        <div class="answer4 box" #box #box4 (click)="reponse([box1,box2,box3,box4], box4)">{{ incorrect_answers[3] }}</div>
-      </div>
-    </div>
+  <!-- <div class="capsule"> -->
+  <div class="answers">
+    <!-- <div (click)="reponse()" appChangeColor>{{ rep }}</div> -->
+    <!-- <div class="answer1_2" #boxParent> -->
+    <div class="answer1 box" #box1 (click)="reponse([box1,box2,box3,box4],box1)">{{ incorrect_answers[0] }}</div>
+    <div class="answer2 box" #box2 (click)="reponse([box1,box2,box3,box4], box2)">{{ incorrect_answers[1] }}</div>
+    <!-- </div> -->
+    <!-- <div class="answer3_4"> -->
+    <div class="answer3 box" #box3 (click)="reponse([box1,box2,box3,box4], box3)">{{ incorrect_answers[2] }}</div>
+    <div class="answer4 box" #box4 (click)="reponse([box1,box2,box3,box4], box4)">{{ incorrect_answers[3] }}</div>
+    <!-- </div> -->
   </div>
-<!--
+  <!-- </div> -->
+  <!--
   <div class="jokers">
     <div class="joker"><p>50/50</p></div>
     <div class="joker"><p>Twister</p></div>

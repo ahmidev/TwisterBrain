@@ -22,7 +22,7 @@ form {
     width: 90%;
     margin-top: 5%;
     color: white;
-    /* vertical-align: middle; */
+
     height: fit-content;
 }
 
@@ -48,11 +48,10 @@ section {
 .top>*:nth-child(even) {
     background-color: var(--colorJaune);
     color: var(--colorOrange);
-    /* vertical-align: middle; */
+
 }
 
 .top>div {
-    /* background-color: var(--colorOrange); */
     padding-inline: 10px;
     padding-block: 5px;
     font-size: medium;
@@ -85,7 +84,7 @@ section {
 
 .mid {
     flex-direction: column;
-    /* margin-top: 20%; */
+
 }
 
 .mid>div {
@@ -95,8 +94,6 @@ section {
     justify-content: center;
     align-items: center;
 }
-
-
 
 
 .mid>*:nth-child(odd) {
@@ -115,6 +112,12 @@ section {
     display: block;
 text-align: center;
 margin: auto;
+}
+
+.mid>*>select {
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 
 .mid>*:nth-child(n) {

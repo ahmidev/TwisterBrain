@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { Choice } from "../models/choice.interface";
+
 import { ParamQuestions } from '../models/param-question.model';
 import { ApiQuestionService } from '../services/api-question.service';
 
@@ -8,7 +10,8 @@ import { ApiQuestionService } from '../services/api-question.service';
   templateUrl: './parameter.component.html',
   styleUrls: ['./parameter.component.css']
 })
-export class ParameterComponent implements OnInit {
+
+export class ParameterComponent {
 
   constructor(
     private apiQuestionServ: ApiQuestionService) { };
@@ -16,6 +19,7 @@ export class ParameterComponent implements OnInit {
   // ⬇ DECLARATION NECESSAIRE AU FORM ⬇
   paramQuestion: ParamQuestions = this.apiQuestionServ.getParamdefaut();
 
+  // ⬇ description dans le titre ⬇
   categoriesTab: Choice[] = [
     {
       name: "Aléatoire",
@@ -43,6 +47,7 @@ export class ParameterComponent implements OnInit {
     },
   ];
 
+  // ⬇ description dans le titre ⬇
   difficultiesTab: Choice[] = [
     {
       name: "Aléatoire",
@@ -62,6 +67,7 @@ export class ParameterComponent implements OnInit {
     }
   ];
 
+  // ⬇ description dans le titre ⬇
   typesTab: Choice[] = [
     {
       name: "Aléatoire",
@@ -76,11 +82,6 @@ export class ParameterComponent implements OnInit {
       value: "boolean"
     },
   ];
-
-  ngOnInit(): any {
-
-  };
-
 
   // ⬇ ok ⬇
   onSubmit() {

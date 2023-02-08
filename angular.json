@@ -11,8 +11,10 @@
       "prefix": "app",
       "architect": {
         "build": {
+          
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            
             "outputPath": "dist/twister-brain",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,6 +31,7 @@
             ],
             "scripts": []
           },
+          
           "configurations": {
             "production": {
               "budgets": [
@@ -45,6 +48,7 @@
               ],
               "outputHashing": "all"
             },
+            
             "development": {
               "buildOptimizer": false,
               "optimization": false,

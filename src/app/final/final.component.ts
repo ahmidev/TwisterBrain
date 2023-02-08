@@ -1,10 +1,9 @@
 //pour importer mon API canvas confetti
 const confettis = require('canvas-confetti');
-import { Component, forwardRef, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../services/players.service';
 import { Player } from '../models/player-model';
-import {ConfettisService} from '../confettis.service';
-
+import {ConfettisService} from '../services/confettis.service';
 
 @Component({
   selector: 'app-final',

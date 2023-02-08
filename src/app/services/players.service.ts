@@ -6,32 +6,40 @@ import { Player } from '../models/player-model';
   providedIn: 'root'
 })
 export class PlayersService {
+
+  // public pseudo: string = "";
+  // public avatar: string = "";
+  // public score: number = 0;
+  // public color: string = "";
+  // public title?: string = "";
+  
+
   
   players: Player[] = [
-    {
-      id: 0,
-      pseudo: 'joueur 1',
-      avatar: '/assets/avatar1.svg',
-      score: 5
-    },
-    {
-      id: 1,
-      pseudo: 'joueur 2',
-      avatar: '/assets/avatar2.svg',
-      score: 30
-    },
-    {
-      id: 2,
-      pseudo: 'joueur 3',
-      avatar: '/assets/avatar3.svg',
-      score: 10
-    },
-    {
-      id: 3,
-      pseudo: 'joueur 4',
-      avatar: '/assets/avatar4.svg',
-      score: 200
-    }
+    // {
+    //   id: 0,
+    //   pseudo: 'joueur 1',
+    //   avatar: '/assets/avatar1.svg',
+    //   score: 5
+    // },
+    // {
+    //   id: 1,
+    //   pseudo: 'joueur 2',
+    //   avatar: '/assets/avatar2.svg',
+    //   score: 30
+    // },
+    // {
+    //   id: 2,
+    //   pseudo: 'joueur 3',
+    //   avatar: '/assets/avatar3.svg',
+    //   score: 10
+    // },
+    // {
+    //   id: 3,
+    //   pseudo: 'joueur 4',
+    //   avatar: '/assets/avatar4.svg',
+    //   score: 200
+    // }
   ];
   constructor() {
   }
@@ -69,28 +77,32 @@ export class PlayersService {
 
   }
   winnerPlayer() {
+    const winner = this.players.sort((a,b)=> {
+      return b.score - a.score;
+    })
+    // console.log("Vainqueur" + winner[0]);
+    return "Vainqueur " + winner[0].pseudo
 
     // renoyer le joueur qui a le plus de points
     //parcourir tableau de joueur en integrant conditions
-    // this.players.forEach(player =>{
     
 
 
     // );
 
-  //   tableau.forEach(element => console.log(element));
-  //   // si le score P1 est > P2 P3 P4 || 
+    // tableau.forEach(element => console.log(element));
+    // si le score P1 est > P2 P3 P4 || 
   // if (this.players[0].score > this.players[1].score && this.players[2].score && this.players[3].score) {
-  //  console.log(this.players[0])
+    //   console.log(this.players[0])
       
-  //    }else if (this.players[1].score > this.players[0].score && this.players[2].score && this.players[3].score) {
-  //    console.log(this.players[1])
+    // }else if (this.players[1].score > this.players[0].score && this.players[2].score && this.players[3].score) {
+    //   console.log(this.players[1])
      
-  //    }else if (this.players[2].score > this.players[0].score && this.players[1].score && this.players[3].score) {
-  //     console.log(this.players[2])
+    // }else if (this.players[2].score > this.players[0].score && this.players[1].score && this.players[3].score) {
+    //   console.log(this.players[2])
       
-  //    }else if (this.players[3].score > this.players[0].score && this.players[2].score && this.players[1].score) {
-  //      console.log(this.players[3])
+    // }else if (this.players[3].score > this.players[0].score && this.players[2].score && this.players[1].score) {
+    //   console.log(this.players[3])
      
     // }
     // return winner
