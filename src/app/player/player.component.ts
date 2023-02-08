@@ -22,6 +22,7 @@ export  class PlayerComponent implements OnInit{
   removePlayer(i:number){
     this.servicePlayer.removePlayer(i);
   }
+ 
   
 
 }

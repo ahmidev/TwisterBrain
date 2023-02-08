@@ -1,23 +1,24 @@
 <nav>
-    
+
     <button [routerLink]="['/player']">Player</button>
     <button [routerLink]="['/player-settings']">Player-Settings</button>
-    
-    
+    <button [routerLink]="['/regles']">regles</button>
+    <button [routerLink]="['/parameter']">parameter</button>
     <button [routerLink]="['/game']">Game</button>
     <button [routerLink]="['/wheel']">Wheel</button>
-    <button [routerLink]="['/final']">Final</button>
+    <button [routerLink]="['/final']">Final</button>   
+
 
 </nav>
 
 <div class="containerHome">
-
-    <img class="logo" src="../assets/logo.svg" alt="logo">
-
+    
+    <img class= "logo" src="../assets/logo.svg" alt="logo">
+   
     <div class="btnHomes">
-        <button class="btnJouer" [routerLink]="['/player-settings']">JOUER</button>
-        <button class="btnRegles" [routerLink]="['/regles']">REGLES</button>
-        <button class="btnParametres" [routerLink]="['/parameter']">PARAMETRES</button>
+        <button class="btnJouer " [routerLink]="['/player-settings']">JOUER</button>
+        <button class="btnRegles " [routerLink]="['/regles']">REGLES</button>
+        <button class="btnParametres " [routerLink]="['/parameter']">PARAMETRES</button>
     </div>
 
 </div>

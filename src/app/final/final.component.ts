@@ -1,55 +1,40 @@
+//pour importer mon API canvas confetti
 const confettis = require('canvas-confetti');
-import { Component, forwardRef, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../services/players.service';
 import { Player } from '../models/player-model';
+import {ConfettisService} from '../services/confettis.service';
 
 @Component({
   selector: 'app-final',
   templateUrl: './final.component.html',
   styleUrls: ['./final.component.css'],
 })
+
+
 export class FinalComponent implements OnInit {
-  // this.joueursService.joueurArray
-  // public joueursArray:Player[]= PlayersService.getAllPl
+  //tableau pour mes joueurs
+    players:Player[]= this.playersService.players;
 
-  winplayer: Player = this.playersService.winnerPlayer();
-  players: Player[] = this.playersService.players;
-  btnDelet = false;
-  confetti = this.showConfetti();
+    btnDelet = false;
 
-  constructor(private playersService: PlayersService) {}
-  ngOnInit(): void {
-    console.log(this.playersService.players);
+constructor (public confettisService: ConfettisService, private playersService: 
+  PlayersService) {}
 
-    // var myConfetti = confettis.create();
-    // myConfetti({
-    //   particleCount: 1000,
-    //   spread: 160,
-    //   propagation: 260
-    // any other options from the global
-    // confetti function
-    // });
-  }
 
+ngOnInit(){
+  //pour afficher mon API
+  this.showConfetti();
+}
+  
   showConfetti() {
-    var myCanvas = document.createElement('canvas');
-    document.body.appendChild(myCanvas);
-    var myConfetti = confettis.create();
-
-    myConfetti(myCanvas, {
-      resize: true,
-      useWorker: true,
-      particleCount: 1000,
-      spread: 160,
-      propagation: 589,
-      origin: {
-        x: Math.random(),
-        // since they fall down, start a bit higher than random
-        y: Math.random() - 0.2,
-      },
-
-      // any other options from the global
-      // confetti function
-    });
+  let canvas = document.querySelector('.canvas') as any;
+  let confetti = confettis.create(canvas, { resize: true });
+  confetti({
+    spread: 170,
+   origin: { y: 0.5 }
+   
+  });
   }
+
 }
