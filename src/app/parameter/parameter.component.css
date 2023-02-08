@@ -1,62 +1,90 @@
 p,
 select,
-input {
-font-size: 1rem;
+button {
+    font-size: 1rem;
+}
+
+body {
+    overflow: auto;
+}
+
+form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title1 {
+    border-radius: var(--border-radius);
+    background-color: var(--colorBleu);
+    width: 90%;
+    margin-top: 5%;
+    color: white;
+
+    height: fit-content;
+}
+
+h1 {
+    text-align: center;
+    padding-block: 5px;
 }
 
 section {
     display: flex;
     width: 90%;
-    margin: auto;
-}
-
-.top>*:nth-child(odd),
-.top>*:nth-child(odd) {
-    background-color: var(--colorOrange);
-    color: var(--font-color);
-}
-
-.top>*:nth-child(even),
-.top>*:nth-child(even) {
-    background-color: var(--colorJaune);
-    color: var(--colorOrange);
-}
-
-.top {
     margin-top: 10%;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.top>*:nth-child(odd) {
+    background-color: var(--colorOrange);
+    color: var(--font-color);
+    vertical-align: baseline;
+}
+
+.top>*:nth-child(even) {
+    background-color: var(--colorJaune);
+    color: var(--colorOrange);
+
+}
+
 .top>div {
-    /* background-color: var(--colorOrange); */
     padding-inline: 10px;
+    padding-block: 5px;
+    font-size: medium;
     display: table;
     text-align: center;
-    height: 2rem;
+    height: 1rem;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
-.top>p {
-    text-align: center;
-    vertical-align: middle;
-    display: table-cell;
-}
-
-.top>select {
+.top>fieldset {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    width: 75px;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-select {
-    border: 1px solid var(--colorBleu);
-    text-align-last: center;
+#nbQuestions {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    width: fit-content;
 }
 
+/************************ MIDDLE SECTION ************************/
 
 .mid {
     flex-direction: column;
-    margin-top: 20%;
+
 }
 
 .mid>div {
@@ -67,21 +95,29 @@ select {
     align-items: center;
 }
 
-.mid>select {
-    margin: 10px 0;
-    height: 2rem;
-}
 
-.mid>*:nth-child(odd),
 .mid>*:nth-child(odd) {
     background-color: var(--colorJaune);
     color: var(--colorOrange);
+    padding-block: 5px;
 }
 
-.mid>*:nth-child(even),
 .mid>*:nth-child(even) {
+    width: 80%;
+    align-self: center;
     background-color: var(--colorOrange);
     color: var(--font-color);
+}
+.mid>*>select{
+    display: block;
+text-align: center;
+margin: auto;
+}
+
+.mid>*>select {
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 
 .mid>*:nth-child(n) {
@@ -98,6 +134,8 @@ div {
     border: solid 1px var(--colorBleu);
 }
 
+/****************************************************/
+
 .bot {
     position: absolute;
     bottom: 15px;
@@ -111,4 +149,12 @@ button {
     color: var(--colorOrange);
     border: solid 1px var(--colorBleu);
     border-radius: 50% 0 0 50%;
+}
+
+@media (min-width : 376px) {
+    body {
+        width: 376px;
+
+
+    }
 }

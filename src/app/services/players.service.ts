@@ -6,6 +6,14 @@ import { Player } from '../models/player-model';
   providedIn: 'root'
 })
 export class PlayersService {
+
+  // public pseudo: string = "";
+  // public avatar: string = "";
+  // public score: number = 0;
+  // public color: string = "";
+  // public title?: string = "";
+  
+
   
   players: Player[] = [
     {
@@ -77,7 +85,6 @@ export class PlayersService {
 
     // renoyer le joueur qui a le plus de points
     //parcourir tableau de joueur en integrant conditions
-    // this.players.forEach(player =>{
     
 
 

@@ -9,7 +9,7 @@
 
 .head{
   /* border: 1px solid lime; */
-  margin-top: 16px;
+  /* margin-top: 8px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,7 +18,7 @@
 
 
 .logo img{
-  width: 120px;
+  width: 10vw;
 }
 
 

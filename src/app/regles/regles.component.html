@@ -1,10 +1,26 @@
+<h1>Régles de TwisterBrain</h1>
 <div class="container">
-<p class="text">
+  <p class="text">
   Test tes connaissances... 
   Choisit un avatar, un pseudo ou pas!!!
   Lance ta partie et Good Luck :)
 </p>
 </div>
-<button class="btnRetour" [routerLink]="['/home']">Home</button>
+<!-- <button class="btnRetour" [routerLink]="['/home']">Home</button>
+<button [routerLink]="['./home']">OK</button> -->
 
-<button [routerLink]="['./home']">OK</button>
+
+
+<!-- animation fléches -->
+<div id="fleches" [routerLink]="['/home']">
+  <div class="flecheSlide">
+    <div class="fleche"></div>
+  </div>
+  <div class="flecheSlide play1">
+    <div class="fleche"></div>
+  </div>
+  <div class="flecheSlide play2">
+    <div class="fleche"></div>
+  </div>
+
+</div>

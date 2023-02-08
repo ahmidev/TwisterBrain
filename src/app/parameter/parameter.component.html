@@ -1,87 +1,61 @@
-<section class="top">
-    <div>
-        <p>
-            Nombre de question
-        </p>
-    </div>
-    <select name="nbQuestion" id="nb-question">
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-    </select>
+<form #paramQuestions="ngForm" (ngSubmit)="nbQuestions.valid ">
+    <h1 class="title1">Parametre Question</h1>
+
+    <section class="top">
+        <div>
+            Nombre de questions
+        </div>
+        <!-- slection du nombre de question -->
+        <fieldset class="nb-question">
+            <!-- dir="rtl => type de direction entre contenu et fleche" -->
+            <input dir="rtl" id="nbQuestions" name="nbQuestions" type="number" value="2"
+                [(ngModel)]="paramQuestion.nbQuestions" #nbQuestions="ngModel" min="1" max="10" required>
+            <!-- au cas ou pour eviter les erreur : -->
+            <div *ngIf="nbQuestions.errors && paramQuestions.submitted">
+                <span *ngIf="nbQuestions.errors['required']">Saisissez un nombre entre 1 et 10.</span>
+                <span *ngIf="nbQuestions.errors['min']">Le nombre doit etre au moins 1.</span>
+                <span *ngIf="nbQuestions.errors['max']">Le nombre doit etre au max 10.</span>
+            </div>
+
+        </fieldset>
+    </section>
+
+    <section class="mid">
+        <div>
+            <!--selection--> Thematique
+        </div>
+        <fieldset>
+
+            <select id="categorie" name="categorie" [(ngModel)]="paramQuestion.category" required>
+                <option [value]="choice.value" *ngFor="let choice of categoriesTab">{{choice.name}}</option>
+            </select>
+        </fieldset>
+
+        <div>
+            <!--selection--> Difficulté
+        </div>
+
+        <fieldset>
+            <select id="difficulty" name="difficulty" [(ngModel)]="paramQuestion.difficulty" required>
+                <option [value]="lvl.value" *ngFor="let lvl of difficultiesTab">{{lvl.name}}</option>
+            </select>
+        </fieldset>
+
+ <div>
+            <!--selection--> Type de question
+        </div>
+
+        <fieldset>
+            <select id="type" name="type" type="url" value="multiple" [(ngModel)]="paramQuestion.type" required>
+                <option [value]="type.value" *ngFor="let type of typesTab">{{type.name}}</option>
+            </select>
+        </fieldset>
+    </section>
 
 
-</section>
+    <section class="bot">
+        <button class="btn" type="submit" routerLink="/home" (click)="onSubmit()"
+            [disabled]="nbQuestions.invalid">Back</button>
+    </section>
 
-<section class="mid">
-    <div>
-        <h1>THEME</h1>
-    </div>
-
-
-    <select name="themeSelector1">
-        <option value="theme1">art</option>
-        <option value="theme2">sport</option>
-        <option value="theme3">culture gen.</option>
-        <option value="theme4">divertissement</option>
-        <option value="theme5">mythologie</option>
-        <option value="theme6">automobile</option>
-
-    </select>
-
-
-
-    <select name="themeSelector2">
-        <option value="theme1">art</option>
-        <option value="theme2">sport</option>
-        <option value="theme3">culture gen.</option>
-        <option value="theme4">divertissement</option>
-        <option value="theme5">mythologie</option>
-        <option value="theme6">automobile</option>
-    </select>
-
-
-
-    <select name="themeSelector3">
-        <option value="theme1">art</option>
-        <option value="theme2">sport</option>
-        <option value="theme3">culture gen.</option>
-        <option value="theme4">divertissement</option>
-        <option value="theme5">mythologie</option>
-        <option value="theme6">automobile</option>
-    </select>
-
-
-
-    <select name="themeSelector4">
-        <option value="theme1">art</option>
-        <option value="theme2">sport</option>
-        <option value="theme3">culture gen.</option>
-        <option value="theme4">divertissement</option>
-        <option value="theme5">mythologie</option>
-        <option value="theme6">automobile</option>
-    </select>
-
-
-
-    <select name="themeSelector5">
-        <option value="theme1">art</option>
-        <option value="theme2">sport</option>
-        <option value="theme3">culture gen.</option>
-        <option value="theme4">divertissement</option>
-        <option value="theme5">mythologie</option>
-        <option value="theme6">automobile</option>
-    </select>
-
-
-</section>
-
-<section class="bot">
-    <!-- (click)="../home" -->
-    <input type="button"  value="Back">
-</section>
+</form>
