@@ -10,7 +10,7 @@ export class ApiQuestionService {
   constructor(private http: HttpClient){}
   // valeur par defaut envoyer des question du jeu
   defautValueParam: ParamQuestions = {
-    nbQuestions: 2,
+    nbQuestions: 1,
     category: null,
     difficulty: null,
     type: 'multiple'

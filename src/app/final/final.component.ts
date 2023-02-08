@@ -15,7 +15,8 @@ import {ConfettisService} from '../services/confettis.service';
 export class FinalComponent implements OnInit {
   //tableau pour mes joueurs
     players:Player[]= this.playersService.players;
-
+    winnerAvatar = this.playersService.winnerPlayer().avatar;
+    winnerScore = this.playersService.winnerPlayer().score;
     btnDelet = false;
 
 constructor (public confettisService: ConfettisService, private playersService: 

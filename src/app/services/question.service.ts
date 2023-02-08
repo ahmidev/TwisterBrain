@@ -23,17 +23,11 @@ export class QuestionService{
   timeLeft: number = 10;
   interval: any;
 
-  constructor(
-    private http: HttpClient,
-    private apiServ:ApiQuestionService) { this.getEasyQuestion() }
-// RICK TRY
-getQuestion(){
-  return  this.http.get(this.apiServ.setParamQuestions())
-}
-//RICK TRY
+  constructor(private http: HttpClient, public myUrl:ApiQuestionService) { this.getEasyQuestion() }
+
 
   getEasyQuestion() {
-    return this.http.get<any>(this.easyUrl).pipe(
+    return this.http.get<any>(this.myUrl.setParamQuestions()).pipe(
       tap((data) => {
         // this.questions.next(data.results)
         this.questions = new BehaviorSubject(data.results);

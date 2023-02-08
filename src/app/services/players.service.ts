@@ -81,7 +81,7 @@ export class PlayersService {
       return b.score - a.score;
     })
     // console.log("Vainqueur" + winner[0]);
-    return "Vainqueur " + winner[0].pseudo
+    return  winner[0]
 
     // renoyer le joueur qui a le plus de points
     //parcourir tableau de joueur en integrant conditions
