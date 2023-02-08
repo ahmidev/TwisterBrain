@@ -3,7 +3,6 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
 import { tap } from 'rxjs';
-import { Question } from 'src/app/question.interface';
 import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
 import { QuestionService } from '../services/question.service';
@@ -185,4 +184,4 @@ export class QuestionComponent implements OnInit {
   //   })
   //   console.log('dommage');
   // }
-}
+
