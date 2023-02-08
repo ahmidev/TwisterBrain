@@ -84,7 +84,7 @@ export class ParameterComponent {
   ];
 
   // ⬇ ok ⬇
-  onSubmit() {
+  onSubmit() {//envoie les elements du formulaire a apiQuestion pour traitement
     this.apiQuestionServ.setParamQuestions(this.paramQuestion)
   };
 }

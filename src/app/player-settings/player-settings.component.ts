@@ -25,11 +25,10 @@ export class PlayerSettingsComponent implements OnInit {
   }
 
   addPlayers(pseudo:HTMLInputElement, avatar:HTMLSelectElement){
-    
-    
     this.playersService.addPlayer(pseudo.value,avatar.value)
     console.log(this.playersService.players)
   }
+  
   submit() {
     console.log(this.form);
   }

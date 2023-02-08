@@ -159,7 +159,7 @@ export class QuestionComponent implements OnInit {
 
     }
   }
-  //lors du clic sur la reponse on verifie si elle egale à la reponse correction
+  //lors du clic sur la reponse on verifie si elle est egale à la reponse correction
   //si c'est le cas on passe la div en vert, si ce nest pas le cas passe la div en rouge et la div correct en vert
 
   // console.log(box.textContent);
