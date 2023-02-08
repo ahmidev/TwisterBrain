@@ -50,7 +50,9 @@
     background-color: var(--colorBleu);
     color: white;
     font-size: 12px;
-    cursor: grab;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .btnJouer {
     background-color: var(--colorJaune);
