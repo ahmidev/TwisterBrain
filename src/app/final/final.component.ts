@@ -5,7 +5,6 @@ import { PlayersService } from '../services/players.service';
 import { Player } from '../models/player-model';
 import {ConfettisService} from '../services/confettis.service';
 
-
 @Component({
   selector: 'app-final',
   templateUrl: './final.component.html',

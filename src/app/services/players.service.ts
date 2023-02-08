@@ -16,30 +16,30 @@ export class PlayersService {
 
   
   players: Player[] = [
-    {
-      id: 0,
-      pseudo: 'joueur 1',
-      avatar: '/assets/avatar1.svg',
-      score: 5
-    },
-    {
-      id: 1,
-      pseudo: 'joueur 2',
-      avatar: '/assets/avatar2.svg',
-      score: 30
-    },
-    {
-      id: 2,
-      pseudo: 'joueur 3',
-      avatar: '/assets/avatar3.svg',
-      score: 10
-    },
-    {
-      id: 3,
-      pseudo: 'joueur 4',
-      avatar: '/assets/avatar4.svg',
-      score: 200
-    }
+    // {
+    //   id: 0,
+    //   pseudo: 'joueur 1',
+    //   avatar: '/assets/avatar1.svg',
+    //   score: 5
+    // },
+    // {
+    //   id: 1,
+    //   pseudo: 'joueur 2',
+    //   avatar: '/assets/avatar2.svg',
+    //   score: 30
+    // },
+    // {
+    //   id: 2,
+    //   pseudo: 'joueur 3',
+    //   avatar: '/assets/avatar3.svg',
+    //   score: 10
+    // },
+    // {
+    //   id: 3,
+    //   pseudo: 'joueur 4',
+    //   avatar: '/assets/avatar4.svg',
+    //   score: 200
+    // }
   ];
   constructor() {
   }
