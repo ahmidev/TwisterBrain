@@ -91,40 +91,8 @@ img {
 
 /******** boutons ***************/
 .footer {
-<<<<<<< HEAD
-=======
-   
-    width: 100%;
->>>>>>> f224fb436c9a12919769a8650af3b60eff1d3c52
     height: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
 }
-=======
-    text-align: center;
-    text-transform: uppercase;
-    overflow: hidden;
-    text-decoration: none;
-    padding: 15px 20px;
-    transition: 2s ease-in;
-    font-size: 1rem;
-}
-
-/********** 2joueurs*************/
-/* .triangle {
-    border-top: 100vh solid var(--colorJaune);
-    border-right: 56vh solid var(--colorBleu);
-}  */
-
-/*3players*/
-/* .trapeze{
-    width:100%;
-	height:500%;
-	border:1px solid var(--colorOrange);
-	border-color:var(--colorJaune) transparent transparent var(--colorOrange);
-	border-width:100px;
-    
-} */
->>>>>>> f224fb436c9a12919769a8650af3b60eff1d3c52
