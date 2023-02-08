@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
     private questionsApi: QuestionService) { }
   ngOnInit(): void {
     console.log(this.myUrl.setParamQuestions());
-    this.questionsApi.getQuestion()
-    
+        
   }
 }
