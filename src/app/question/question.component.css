@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
 .game_component {
   display: flex;
   flex-direction: column;
@@ -31,6 +33,7 @@
 }
 
 .theme {
+  font-family: 'Nunito', sans-serif;
   position: absolute;
   top: 0;
   color: #0c1e52;
@@ -38,7 +41,7 @@
   left: calc(80vw - 75%);
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: wheat;
+  background-color: whitesmoke;
   width: 40vw;
   height: 30px;
   border-radius: 5px;
@@ -58,8 +61,30 @@
 
 .question_title p {
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
 
+
+
+}
+
+.parties{
+  color: whitesmoke;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 16px;
+  background-color: var(--colorOrange);
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--colorOrange),
+    0 0 0.8rem var(--colorOrange),
+    0 0 2.8rem var(--colorOrange),
+    inset 0 0 1.3rem var(--colorOrange);
 
 }
 
@@ -67,6 +92,7 @@
   color: var(--colorOrange);
   font-size: 3rem;
   font-weight: 500;
+  font-family: 'Nunito', sans-serif;
 }
 
 
@@ -91,8 +117,9 @@
 }
 
 .answers div:nth-child(1), .answers div:nth-child(4){
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.5px;
   background-color: #0798b1;
   animation: pulsate 1.5s infinite alternate;
   border: 0.2rem solid #fff;
@@ -109,8 +136,9 @@
 }
 
 .answers div:nth-child(2), .answers div:nth-child(3){
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.5px;
   background-color: var(--colorJaune);
   animation: pulsate 1.5s infinite alternate;
   border: 0.2rem solid #fff;
