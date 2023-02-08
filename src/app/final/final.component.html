@@ -1,26 +1,32 @@
 <div class="header">
-    <app-player [btnDelet] = "btnDelet"></app-player> 
-    
+    <app-player [btnDelet]="btnDelet"></app-player>
+
     <!-- pour afficher mes joueurs -->
- <div class="joueur" *ngFor="let player of players">
-        <img class="avatar" src={{player.avatar}} >
+    <div class="joueur" *ngFor="let player of players">
+        <img class="avatar" src={{player.avatar}}>
         <p class="txt_score">{{player.score}}</p>
     </div> -->
 </div>
+
+<!-- pour mon centre bravo + avatar  -->
 <div class="main" (click)="showConfetti()">
-    <p class="bravo"  > Bravo
-        <img src={{players[2].avatar}}></p>
-        <canvas class="canvas"></canvas>
+    <div class="bravat">
+        <!-- <p class="bravo"> bravo </p> -->
+        <img src={{players[2].avatar}}>
+        <div class="resul-score">Score : {{players[2].score}}</div>
+    </div>
+    <canvas class="canvas"></canvas> 
+    <!-- ajout d'un canvas pour mon API -->
 </div>
+
 <div class="footer">
     <div class="boutons">
         <div class="btn2">
-            <!-- 4spans pour faire mes 4 contours de mon bouton  -->
+            <span class="linemoove"></span>
+            <span class="linemoove"></span> <!-- 4spans pour faire mes 4 contours de mon bouton  -->
             <span class="linemoove"></span>
             <span class="linemoove"></span>
-            <span class="linemoove"></span>
-            <span class="linemoove"></span>
-            <span [routerLink]="['/game']">ReJouer</span>
+            <span [routerLink]="['/game']">Game</span>
         </div>
     </div>
 </div>
