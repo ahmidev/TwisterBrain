@@ -9,30 +9,30 @@ export class PlayersService {
 
   //creation de joueur en dur
   players: Player[] = [
-    // {
-    //   id: 0,
-    //   pseudo: 'joueur 1',
-    //   avatar: '/assets/avatar1.svg',
-    //   score: 5
-    // },
-    // {
-    //   id: 1,
-    //   pseudo: 'joueur 2',
-    //   avatar: '/assets/avatar2.svg',
-    //   score: 30
-    // },
-    // {
-    //   id: 2,
-    //   pseudo: 'joueur 3',
-    //   avatar: '/assets/avatar3.svg',
-    //   score: 10
-    // },
-    // {
-    //   id: 3,
-    //   pseudo: 'joueur 4',
-    //   avatar: '/assets/avatar4.svg',
-    //   score: 20
-    // }
+    {
+      id: 0,
+      pseudo: 'joueur 1',
+      avatar: '/assets/avatar1.svg',
+      score: 5
+    },
+    {
+      id: 1,
+      pseudo: 'joueur 2',
+      avatar: '/assets/avatar2.svg',
+      score: 30
+    },
+    {
+      id: 2,
+      pseudo: 'joueur 3',
+      avatar: '/assets/avatar3.svg',
+      score: 10
+    },
+    {
+      id: 3,
+      pseudo: 'joueur 4',
+      avatar: '/assets/avatar4.svg',
+      score: 200
+    }
   ];
 
   // parti Ahmid
@@ -43,6 +43,7 @@ export class PlayersService {
     const player: Player = { id: this.players.length + 1, pseudo: pseudo, avatar: avatar, score: 0 }
     this.players.push(player);
 
+
   }
 
   removePlayer(i: number) {
@@ -52,6 +53,7 @@ export class PlayersService {
   // partie ced
   // récuperer les info joueur en dur
   getAllPlayers(): Player[] {
+
 
     return this.players;
   }
@@ -77,6 +79,8 @@ export class PlayersService {
   }
 
   winnerPlayer() {
+    // parcourir les joueurs
+    // si score superieur aux autres
     // parcourir les joueurs
     // si score superieur aux autres
 

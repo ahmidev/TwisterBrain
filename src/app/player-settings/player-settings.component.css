@@ -1,4 +1,4 @@
-/* --colorJaune : #FCBD08; 
+/* --colorJaune : #FCBD08;
 --colorBleu : #1A7279;
 --colorOrange : #D5551E;
 --colorCyan : #04C7D6 ;
@@ -6,6 +6,7 @@
 
 
 .container {
+  margin-top: 24px;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -13,7 +14,6 @@
     align-items: center;
     padding: 0 10px;
     box-sizing: border-box;
-
     /* margin: auto; */
 }
 
@@ -30,14 +30,29 @@
 }
 
 .container form fieldset {
-    border: 3px solid var(--colorJaune);
-    padding: 10px 20px;
+    /* border: 3px solid var(--colorJaune); */
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--colorJaune),
+    0 0 0.8rem var(--colorJaune),
+    0 0 2.8rem var(--colorJaune),
+    inset 0 0 1.3rem var(--colorJaune);
+
 }
 .container form legend {
-    color: black;
+    /* color: black; */
+    color: whitesmoke;
     background-color: var(--colorJaune);
     padding: 5px;
     border-radius: 5px;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--colorJaune),
+    0 0 0.8rem var(--colorJaune),
+    0 0 2.8rem var(--colorJaune),
+    inset 0 0 1.3rem var(--colorJaune);
 }
 
 .container form .player {
@@ -51,7 +66,7 @@
 .selectContainer {
     display: flex;
     align-items: center;
-    
+
 }
 
 .selectContainer img {
@@ -62,7 +77,8 @@
 .select {
     display: flex;
     flex-direction: column;
-    
+    border: none;
+
 }
 
 label {
@@ -77,28 +93,25 @@ label {
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
-    border: 2px solid var(--colorJaune);
+    /* border: 2px solid var(--colorJaune); */
 
 }
 .select select {
     height: 30px;
     border-radius: 5px;
-    border: 2px solid var(--colorVert);
+    /* border: 2px solid var(--colorVert); */
 }
 .inputPseudo{
     display: flex;
     align-items: center;
     margin-top: 20px;
-    
-   
+    border: none;
 }
+
 .inputField {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-
-   
 }
 .inputField p {
    width: 183px;
@@ -116,7 +129,7 @@ label {
     padding: 5px;
     border-radius: 5px;
     margin: 10px ;
-    border: 2px solid var(--colorVert);
+    /* border: 2px solid var(--colorVert); */
 }
 
 .player button {
@@ -129,14 +142,27 @@ label {
     letter-spacing: 2px;
     cursor: pointer;
     color: var(--colorBlanc);
-    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
     transition: all 0.3s;
-    
-    
+    border-radius: 5px;
+    border: none;
+
+
 
 }
 .player button:hover {
-    background-color: #ffb700;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #ffb700,
+    0 0 0.8rem #ffb700,
+    0 0 2.8rem #ffb700,
+    inset 0 0 1.3rem #ffb700;
+    border-radius: 5px;
+    border: none;
+
+}
+
+.player button:hover:disabled{
+  box-shadow: none;
 }
 
 
@@ -150,14 +176,25 @@ label {
     font-size: 20px;
     letter-spacing: 2px;
     font-weight: 600;
-    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
     cursor: pointer;
     transition: all 0.3s;
+    border: none;
+
 }
 
 .playBtn:hover {
     background: #85df40;
     transition: all 0.3s;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #85df40,
+    0 0 0.8rem #85df40,
+    0 0 2.8rem #85df40,
+    inset 0 0 1.3rem #85df40;
+}
+
+.playBtn:hover:disabled{
+  box-shadow: none;
 }
 
 button.btnValid:disabled {

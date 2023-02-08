@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,10 +15,12 @@ import { QuestionComponent } from './question/question.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { ReglesComponent } from './regles/regles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChangeColorDirective } from './change-color.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     PlayerComponent,
@@ -28,9 +29,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FinalComponent,
     WheelComponent,
     PlayerSettingsComponent,
+    
     ReglesComponent,
-    QuestionComponent
+    QuestionComponent,
+    ChangeColorDirective
   ],
+   
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,

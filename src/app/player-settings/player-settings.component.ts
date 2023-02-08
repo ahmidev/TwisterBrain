@@ -13,11 +13,11 @@ export class PlayerSettingsComponent implements OnInit {
   avatar = '';
   public form: FormGroup = new FormGroup({
     avatar: new FormControl("",Validators.required),
-    pseudo: new FormControl("",[Validators.required, Validators.minLength(4)]),
+    pseudo: new FormControl("",[Validators.required, Validators.minLength(2)]),
    
   });
 
-  constructor(private playersService: PlayersService) { }
+  constructor(private playersService: PlayersService) {console.log(this.form) }
 
 
   ngOnInit() {

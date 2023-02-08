@@ -1,39 +1,26 @@
-<div class="container">
-
-    <div class="header">
-        <app-player [btnDelet] = "btnDelet"></app-player>
-
-        <!-- <div class="joueur" *ngFor="let player of players">
-            <img class="avatar avatar1" src={{player.avatar}} >
-            <p class="txt_score">{{player.score}}</p>
-
-            <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
-            <p class="txt_score">{{myJoueur2.score}} </p>
-            <img class="avatar avatar3" [src]="[myJoueur3.image]" [alt]="[myJoueur3.alt]">
-            <p class="txt_score">{{myJoueur3.score}} </p>
-            <img class="avatar avatar4" [src]="[myJoueur4.image]" [alt]="[myJoueur4.alt]">
-            <p class="txt_score">{{myJoueur4.score}} </p> 
-        </div> -->
-    </div>
-
-    <!-- <div class="main">
-        <button (click)="showConfetti()">confettis</button> 
-        <p class="bravo" (click)="showConfetti()" > Bravo <img
-                src={{winplayer.avatar}}></p>
-        
-        
+<div class="header">
+    <app-player [btnDelet] = "btnDelet"></app-player> 
+    
+    <!-- pour afficher mes joueurs -->
+ <div class="joueur" *ngFor="let player of players">
+        <img class="avatar" src={{player.avatar}} >
+        <p class="txt_score">{{player.score}}</p>
     </div> -->
-
-
-    <div class="footer">
-        <div class="boutons" (click)="showConfetti()">
-            <div class="btn2">
-                <span class="linemoove"></span>
-                <span class="linemoove"></span>
-                <span class="linemoove"></span>
-                <span class="linemoove"></span>
-                <span [routerLink]="['/game']">ReJouer</span>
-            </div>
+</div>
+<div class="main" (click)="showConfetti()">
+    <p class="bravo"  > Bravo
+        <img src={{players[2].avatar}}></p>
+        <canvas class="canvas"></canvas>
+</div>
+<div class="footer">
+    <div class="boutons">
+        <div class="btn2">
+            <!-- 4spans pour faire mes 4 contours de mon bouton  -->
+            <span class="linemoove"></span>
+            <span class="linemoove"></span>
+            <span class="linemoove"></span>
+            <span class="linemoove"></span>
+            <span [routerLink]="['/game']">ReJouer</span>
         </div>
     </div>
 </div>
