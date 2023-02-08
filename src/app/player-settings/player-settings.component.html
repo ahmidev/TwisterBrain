@@ -10,10 +10,10 @@
           <div class="select">
             <label class="avatar" for="avatar">Choisir votre avatar</label>
             <select name="avatar" formControlName="avatar" id="avatar" #select [(ngModel)]="avatar">
-              <option value="assets/avatar1.svg">Avatar 1</option>
-              <option value="assets/avatar2.svg">Avatar 2</option>
-              <option value="assets/avatar3.svg">Avatar 3</option>
-              <option value="assets/avatar4.svg">Avatar 4</option>
+              <option value="assets/avatar1.svg" [style.background-color]="'#0798b1'">Avatar 1</option>
+              <option value="assets/avatar2.svg" [style.background-color]="'#88cb53'">Avatar 2</option>
+              <option value="assets/avatar3.svg" [style.background-color]="'#f05dd0'">Avatar 3</option>
+              <option value="assets/avatar4.svg" [style.background-color]="'#d8230a'">Avatar 4</option>
             </select>
           </div>
         </div>
@@ -28,5 +28,16 @@
       </div>
     </fieldset>
   </form>
-  <button class="playBtn btnValid" [disabled]="players.length === 0" routerLink="/game">Game</button>
+   
+  <!-- <button class="playBtn btnValid" [disabled]="players.length === 0" routerLink="/game">Game</button> -->
+
+  <div class="btn2">
+    <!-- 4spans pour faire mes 4 contours de mon bouton  -->
+    <span class="linemoove"></span>
+    <span class="linemoove"></span>
+    <span class="linemoove"></span>
+    <span class="linemoove"></span>
+    <span [routerLink]="['/game']">  Game  </span>
+  </div>
 </div>
+

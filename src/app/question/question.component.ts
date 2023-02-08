@@ -136,17 +136,10 @@ export class QuestionComponent implements OnInit {
         }
         if (b.textContent == this.correct_answer) {
           b.style.background = 'green'
-        }
-      };
-      if (boxIndiv.textContent == this.correct_answer) {
-        boxIndiv.style.background = 'green';
-        this.playerService.players[0].score += 10;
-      } else {
-        boxIndiv.style.background = 'red'
-      };
-
-      setTimeout(() => {
+        } };
+      }
         this.timeLeft = 10; // on repasse la timer à 10s une fois la question rechargée
+      setTimeout(() => {
         this.ngOnInit()
         boxIndiv.style.background = ''
         for (let b of box) {

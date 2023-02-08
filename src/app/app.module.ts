@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,10 +16,11 @@ import { PlayerSettingsComponent } from './player-settings/player-settings.compo
 import { ReglesComponent } from './regles/regles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChangeColorDirective } from './change-color.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     PlayerComponent,
