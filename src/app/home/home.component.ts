@@ -9,7 +9,7 @@ import { ApiQuestionService } from '../services/api-question.service';
 })
 export class HomeComponent implements OnInit{
 
-  // ⬇ BORDEL DE RICK ⬇ c'est pour afficher l'adresse API...normalement c'est vide
+  // ⬇ BORDEL DE RICK ⬇ c'est pour afficher l'adresse API dynamic...normalement c'est vide
   urlApi!:any;
   constructor(private myUrl:ApiQuestionService){}
   ngOnInit(): void {
