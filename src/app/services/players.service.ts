@@ -82,7 +82,7 @@ export class PlayersService {
       return b.score - a.score;
     })
     // console.log("Vainqueur" + winner[0]);
-    return "Vainqueur " + winner[0].pseudo
+    return winner[0]
   }
 
 }
