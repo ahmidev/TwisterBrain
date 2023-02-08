@@ -43,7 +43,8 @@
 
 .btnParametres {
     height: 3vh;
-    width: 40vw;
+    min-width: 100px;
+    max-width: 40vw;
     border-radius: 10px;
     position: center;
     background-color: var(--colorBleu);
