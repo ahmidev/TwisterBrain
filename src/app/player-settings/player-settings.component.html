@@ -17,6 +17,7 @@
             </select>
           </div>
         </div>
+
         <div class="inputPseudo">
           <label for="pseudo">Pseudo</label>
           <div class="inputField">
@@ -24,6 +25,7 @@
             <input type="text" formControlName="pseudo" #pseudo placeholder="Inscrire votre pseudo" />
           </div>
         </div>
+        
         <button class="btnValid" type="submit" [disabled]="form.invalid" (click)="addPlayers(pseudo, select)">Ajouter</button>
       </div>
     </fieldset>
