@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
-import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { Route, Router, Routes } from '@angular/router';
+// import { ThisReceiver } from '@angular/compiler';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 // import { Question } from 'src/app/question.interface';
-import { Player } from '../models/player-model';
+// import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
 import { QuestionService } from '../services/question.service';
 @Component({
@@ -13,7 +13,6 @@ import { QuestionService } from '../services/question.service';
   styleUrls: ['./question.component.css'],
 })
 export class QuestionComponent implements OnInit {
-
 
   datAquestion: any;
   category: any;
@@ -25,7 +24,6 @@ export class QuestionComponent implements OnInit {
   timeLeft: number = 10;
   idTimer: any;
   isFinished: boolean = false;
-
 
   @ViewChildren('box') boxx!: ElementRef<HTMLDivElement>[];
   constructor(
