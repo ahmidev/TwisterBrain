@@ -3,7 +3,6 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
 import { tap } from 'rxjs';
-import { Question } from 'src/app/question.interface';
 import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
 import { QuestionService } from '../services/question.service';
@@ -64,10 +63,10 @@ export class QuestionComponent implements OnInit {
         this.category = data.translations[0].text
       })
       this.correct_answer = data.results[0].correct_answer;
-      this.http.get<any>(`${this.questionService.traductionUrl}${this.correct_answer}`).subscribe(data => {
-        console.log(data.translations[0].text);
-        this.correct_answer = data.translations[0].text
-      })
+      // this.http.get<any>(`${this.questionService.traductionUrl}${this.correct_answer}`).subscribe(data => {
+      //   console.log(data.translations[0].text);
+      //   this.correct_answer = data.translations[0].text
+      // })
       console.log(data);
       this.incorrect_answers = data.results[0].incorrect_answers;
       // this.http.get<any>(`${this.questionService.traductionUrl}${this.incorrect_answers}`).subscribe(data => {
@@ -117,6 +116,9 @@ export class QuestionComponent implements OnInit {
         this.ngOnInit();
         this.timeLeft = 10;
         this.partie++
+        if (this.partie == 10) {
+          this.router.navigateByUrl("/final");
+        }
       }
     }, 1000)
   };
@@ -137,6 +139,12 @@ export class QuestionComponent implements OnInit {
         if (b.textContent == this.correct_answer) {
           b.style.background = 'green'
         } };
+      }
+      if (boxIndiv.textContent == this.correct_answer) {
+        boxIndiv.style.background = 'green';
+        this.playerService.players[0].score += 10;
+      } else {
+        boxIndiv.style.background = 'red'
       }
         this.timeLeft = 10; // on repasse la timer à 10s une fois la question rechargée
       setTimeout(() => {
@@ -185,4 +193,4 @@ export class QuestionComponent implements OnInit {
   //   })
   //   console.log('dommage');
   // }
-}
+
