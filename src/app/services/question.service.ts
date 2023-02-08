@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
+import { ApiQuestionService } from './api-question.service';
 export interface Response {
   response_code: number,
   results: []
@@ -22,8 +23,14 @@ export class QuestionService{
   timeLeft: number = 10;
   interval: any;
 
-  constructor(private http: HttpClient) { this.getEasyQuestion() }
-
+  constructor(
+    private http: HttpClient,
+    private apiServ:ApiQuestionService) { this.getEasyQuestion() }
+// RICK TRY
+getQuestion(){
+  return  this.http.get(this.apiServ.setParamQuestions())
+}
+//RICK TRY
 
   getEasyQuestion() {
     return this.http.get<any>(this.easyUrl).pipe(

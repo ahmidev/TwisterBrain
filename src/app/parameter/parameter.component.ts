@@ -69,18 +69,18 @@ export class ParameterComponent {
 
   // ⬇ description dans le titre ⬇
   typesTab: Choice[] = [
-    {
-      name: "Aléatoire",
-      value: null
-    },
+    // {
+    //   name: "Aléatoire",
+    //   value: null
+    // },
     {
       name: "Choix Multiple ",
       value: "multiple"
     },
-    {
-      name: "Vrai ou faux",
-      value: "boolean"
-    },
+    // {
+    //   name: "Vrai ou faux",
+    //   value: "boolean"
+    // },
   ];
 
   // ⬇ ok ⬇
