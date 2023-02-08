@@ -21,9 +21,10 @@ export class QuestionComponent implements OnInit {
   question: any;
   timer: any;
   partie: number = 1;
-  timeLeft: number = 10;
+  timeLeft: number = 15;
   idTimer: any;
   isFinished: boolean = false;
+  isClic: boolean = false;
 
 
   @ViewChildren('box') boxx!: ElementRef<HTMLDivElement>[];
@@ -114,9 +115,9 @@ export class QuestionComponent implements OnInit {
         this.timeLeft--;
       } else {
         this.ngOnInit();
-        this.timeLeft = 10;
+        this.timeLeft = 15;
         this.partie++
-        if (this.partie == 10) {
+        if (this.partie >= 10) {
           this.router.navigateByUrl("/final");
         }
       }
@@ -124,6 +125,8 @@ export class QuestionComponent implements OnInit {
   };
 
   reponse(box: HTMLElement[], boxIndiv: HTMLElement) {
+    if(this.isClic)return;
+    this.isClic = true;
     clearInterval(this.idTimer); // on stoppe le timer
     this.isFinished = false; // on repasse l'expression de la fonction setCountdown a false
     console.log(box)
@@ -146,9 +149,10 @@ export class QuestionComponent implements OnInit {
       } else {
         boxIndiv.style.background = 'red'
       }
-        this.timeLeft = 10; // on repasse la timer à 10s une fois la question rechargée
+        this.timeLeft = 15; // on repasse la timer à 10s une fois la question rechargée
       setTimeout(() => {
-        this.ngOnInit()
+        this.ngOnInit();
+        this.isClic = false;
         boxIndiv.style.background = ''
         for (let b of box) {
           b.style.background = ''
@@ -156,7 +160,7 @@ export class QuestionComponent implements OnInit {
         if (this.partie == 10) {
           this.router.navigateByUrl("/final");
         }
-      }, 3000)
+      }, 2000)
 
     }
   }

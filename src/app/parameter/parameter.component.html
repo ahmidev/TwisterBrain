@@ -8,14 +8,14 @@
         <!-- slection du nombre de question -->
         <fieldset class="nb-question">
             <!-- dir="rtl => type de direction entre contenu et fleche" -->
-            <input dir="rtl" id="nbQuestions" name="nbQuestions" type="number" value="2"
-                [(ngModel)]="paramQuestion.nbQuestions" #nbQuestions="ngModel" min="1" max="10" required>
+            <input dir="rtl" id="nbQuestions" name="nbQuestions" type="number" value="1"
+                [(ngModel)]="paramQuestion.nbQuestions" #nbQuestions="ngModel" min="1" max="1" required hidden>
             <!-- au cas ou pour eviter les erreur : -->
-            <div *ngIf="nbQuestions.errors && paramQuestions.submitted">
+            <!-- <div *ngIf="nbQuestions.errors && paramQuestions.submitted">
                 <span *ngIf="nbQuestions.errors['required']">Saisissez un nombre entre 1 et 10.</span>
                 <span *ngIf="nbQuestions.errors['min']">Le nombre doit etre au moins 1.</span>
                 <span *ngIf="nbQuestions.errors['max']">Le nombre doit etre au max 10.</span>
-            </div>
+            </div> -->
 
         </fieldset>
     </section>
@@ -54,7 +54,7 @@
 
 
     <section class="bot">
-        <button class="btn" type="submit" routerLink="/home" (click)="onSubmit()"
+        <button class="btn" type="submit" routerLink="../" (click)="onSubmit()"
             [disabled]="nbQuestions.invalid">Back</button>
     </section>
 
