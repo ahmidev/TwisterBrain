@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../services/players.service';
 import { Player } from '../models/player-model';
 import {ConfettisService} from '../services/confettis.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-final',
@@ -20,7 +21,7 @@ export class FinalComponent implements OnInit {
     btnDelet = false;
 
 constructor (public confettisService: ConfettisService, private playersService: 
-  PlayersService) {}
+  PlayersService, public router:Router) {}
 
 
 ngOnInit(){
@@ -39,6 +40,12 @@ ngOnInit(){
    origin: { y: 0.5 }
    
   });
+  }
+  rejouer(){
+    this.playersService.players.forEach(score=>{
+      score.score = 0;
+    });
+    this.router.navigateByUrl("/game")
   }
 
 }
