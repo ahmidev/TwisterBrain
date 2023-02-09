@@ -17,7 +17,7 @@ export class QuestionService{
   public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
   public mediumUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
   public hardUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
-  public traductionUrl: string = 'https://api.deepl.com/v2/translate?auth_key=b434cde3-ffa2-55e4-833f-db1afbb7fa33&target_lang=fr&text='
+  public traductionUrl: string = 'https://api.deepl.com/v2/translate?auth_key=6c3cea4d-d302-e316-59c3-35717d46dfb0&target_lang=fr&text='
   datas: any;
   questions: any;
   timeLeft: number = 10;
