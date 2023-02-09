@@ -42,7 +42,8 @@
 }
 
 .btnParametres {
-    height: 3vh;
+    min-height: 20px;
+    max-height: 3vh; 
     min-width: 100px;
     max-width: 40vw;
     border-radius: 10px;
