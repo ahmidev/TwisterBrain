@@ -14,33 +14,36 @@ export class PlayerSettingsComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     avatar: new FormControl("",Validators.required),
     pseudo: new FormControl("",[Validators.required, Validators.minLength(2)]),
-   
+
   });
 
   constructor(private playersService: PlayersService) {console.log(this.form) }
 
 
   ngOnInit() {
-   
+
     this.players=this.playersService.getAllPlayers()
     console.log( this.form.invalid)
   }
 
   addPlayers(pseudo:HTMLInputElement, avatar:HTMLSelectElement){
-    this.playersService.addPlayer(pseudo.value,avatar.value)
-  //remise a zéro à chaque clic des champs dans le formulaire
-   this.avatars = ""
-    pseudo.value = "";
-  
+    //permet de bloquer à 2joueurs
+     if (this.playersService.players.length<2){
+     this.playersService.addPlayer(pseudo.value,avatar.value)
+   //remise a zéro à chaque clic des champs dans le formulaire
+    this.avatars = ""
+     pseudo.value = "";
+    } else {console.log('nombre de joeurs atteint')}
+
    console.log( this.form.invalid)
-    
+
     console.log(this.form)
     console.log(this.playersService.players)
   }
-  
+
   submit() {
-    
-  
+
+
    console.log( this.form.invalid)
     console.log(this.form);
   }
