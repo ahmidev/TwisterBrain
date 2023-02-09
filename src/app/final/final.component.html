@@ -16,7 +16,7 @@
         <div class="resul-score">Score : {{winnerScore1}}</div>
         <img *ngIf="equality" src={{winnerAvatar2}}>
         <div *ngIf="equality" class="resul-score">Score : {{winnerScore2}}</div>
-        <p *ngIf="equality">Egalité !</p>
+        <p *ngIf="equality" class="resul-score">Egalité !</p>
     </div>
     <canvas class="canvas"></canvas>
     <!-- ajout d'un canvas pour mon API -->
