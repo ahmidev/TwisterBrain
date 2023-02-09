@@ -11,7 +11,7 @@ export interface Response {
   providedIn: 'root'
 })
 
-export class QuestionService{
+export class QuestionService {
 
   // public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
   // public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
@@ -67,5 +67,5 @@ export class QuestionService{
       array[randomIndex] = temporaryValue;
     }
     return array;
-  }  
+  }
 }

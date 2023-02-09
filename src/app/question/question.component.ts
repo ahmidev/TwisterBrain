@@ -29,8 +29,8 @@ export class QuestionComponent implements OnInit, OnDestroy {
   player1:Player = this.playerService.players[0];
   player2:Player = this.playerService.players[1];
   currentPlayer : Player = this.player1;
-  
-  
+
+
 
   @ViewChildren('box') boxx!: ElementRef<HTMLDivElement>[];
   constructor(
@@ -115,7 +115,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
 
 
   startCountdown() {
-    
+
     if (this.isFinished) { // expression a false a la première lecture
       return
     };// au prochain tour de lecture la fonction sortira grace a la ligne 78
@@ -127,21 +127,26 @@ export class QuestionComponent implements OnInit, OnDestroy {
         this.ngOnInit();
         this.timeLeft = 15;
         this.partie++
+        if(this.playerService.players.length == 2){
         if (this.partie >= 10 && this.currentPlayer==this.player2) {
           this.router.navigateByUrl("/final");
+        }}else {
+          if (this.partie == 10) {
+            this.router.navigateByUrl("/final");
+          }
         }
       }
     }, 1000)
   };
 
   reponse(box: HTMLElement[], boxIndiv: HTMLElement) {
-    
+
     if(this.isClic)return;
     this.isClic = true;
 
     clearInterval(this.idTimer); // on stoppe le timer
     this.isFinished = false; // on repasse l'expression de la fonction setCountdown a false
-  
+
     this.partie++
     console.log(this.partie);
 
@@ -170,8 +175,11 @@ export class QuestionComponent implements OnInit, OnDestroy {
         for (let b of box) {
           b.style.background = ''
         }
+
+
+        if(this.playerService.players.length == 2){
         if (this.partie == 10 && this.currentPlayer==this.player1 ) {
-         
+
           this.currentPlayer = this.player2;
           clearInterval(this.idTimer);
           this.partie = 0;
@@ -180,12 +188,18 @@ export class QuestionComponent implements OnInit, OnDestroy {
           clearInterval(this.idTimer);
           this.partie = 0;
           this.router.navigateByUrl("/final");
+        }} else {
+          if (this.partie == 10) {
+            this.router.navigateByUrl("/final");
+            clearInterval(this.idTimer);
+            this.partie = 0;
+          }
         }
       }, 2000)
 
     }
     ngOnDestroy(): void {
-   
+
     }
   }
   //lors du clic sur la reponse on verifie si elle est egale à la reponse correction
@@ -221,4 +235,3 @@ export class QuestionComponent implements OnInit, OnDestroy {
   //   })
   //   console.log('dommage');
   // }
-
