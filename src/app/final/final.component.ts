@@ -30,14 +30,21 @@ export class FinalComponent implements OnInit {
   ngOnInit() {
     //pour afficher mon API
     this.showConfetti();
-    this.playersService.winnerPlayer
-    if (this.playersService.winnerPlayer()[0].score == this.playersService.winnerPlayer()[1].score) {
+    console.log(this.playersService.winnerPlayer());
+     //on verifie si y a deux joueurs dans le tableau de joueurs
+    if(this.playersService.players.length ==2){
+      if (this.playersService.winnerPlayer()[0].score == this.playersService.winnerPlayer()[1].score) {
+        this.winnerAvatar1 = this.playersService.winnerPlayer()[0].avatar;
+        this.winnerScore1 = this.playersService.winnerPlayer()[0].score;
+        this.winnerAvatar2 = this.playersService.winnerPlayer()[1].avatar;
+        this.winnerScore2 = this.playersService.winnerPlayer()[1].score;
+        this.equality = true;
+      } else { //sinn on applique l'avatar et le score du seul joueur 
       this.winnerAvatar1 = this.playersService.winnerPlayer()[0].avatar;
       this.winnerScore1 = this.playersService.winnerPlayer()[0].score;
-      this.winnerAvatar2 = this.playersService.winnerPlayer()[1].avatar;
-      this.winnerScore2 = this.playersService.winnerPlayer()[1].score;
-      this.equality = true;
-    }else {
+    }
+    }
+    else { //sinn on applique l'avatar et le score du seul joueur 
       this.winnerAvatar1 = this.playersService.winnerPlayer()[0].avatar;
       this.winnerScore1 = this.playersService.winnerPlayer()[0].score;
     }
