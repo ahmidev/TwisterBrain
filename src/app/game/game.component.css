@@ -1,0 +1,34 @@
+
+/* @media (max-width: 375px) { */
+
+.game_component{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head{
+  /* border: 1px solid lime; */
+  /* margin-top: 8px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.logo img{
+  width: 10vw;
+}
+
+
+.test {
+  color: white;
+}
+
+
+
+
+
+
+/* } */

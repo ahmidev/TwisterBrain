@@ -1,0 +1,60 @@
+h1 {
+    text-align: center;
+    font-size: 45px;
+padding: 80px;
+font-family : 'Great Vibes', cursive ;
+color: var(--colorBlanc);
+/* text-shadow: rgb(6, 66, 156) 10px 15px 15px; */
+text-shadow: 5px 1px 2px rgb(38, 0, 255), 0 0 1em rgb(210, 35, 233), 0 0 0.2em rgb(231, 20, 221);
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(50%);
+    right: 50%;
+    width: 80%;
+    background-color: var(--colorBlanc);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#fleches {
+ position: relative;
+top: 355px;
+ left: 255px;
+}
+
+.fleche {
+    /* taille fleche en viewport vw afin de faciliter mon responsive */
+  width: 3vw;
+  height: 3vw;
+  border: 2vw solid white; /*faire un bord*/
+  /*permet de faire la fleche en bi-color*/
+  border-color: rgb(11, 126, 219) transparent transparent rgb(230, 189, 7);
+  /*rotation direction droite*/
+  transform: rotate(136deg);
+}
+
+
+.flecheSlide {
+  position: absolute;
+   animation: slide 5s linear infinite;
+}
+
+.play1 {
+    animation-delay: 1s;
+}
+.play2 {
+
+    animation-delay: 2s;
+}
+
+/*animation slide de mes 3 fleches*/
+@keyframes slide {
+    0% { opacity:0; transform: translateX(-15vw); }	
+   20% { opacity:1; transform: translateX(-9vw); }	
+   80% { opacity:1; transform: translateX(9vw); }	
+  100% { opacity:0; transform: translateX(15vw); }	
+  /*translateX permet de faire mon animation de gauche / droite*/
+}

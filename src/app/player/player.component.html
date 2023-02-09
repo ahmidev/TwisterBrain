@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="player" *ngFor="let player of players, let i = index">
+        <img class="avatar" src={{player.avatar}} alt="">
+
+        <div class="infos">
+            <p> <span>{{player.pseudo}}</span> </p>
+            <p><span>{{player.score}}</span> </p>
+            <button *ngIf="btnDelet" class="btn" (click)="removePlayer(i)">Supprimer</button>
+        </div>
+        <!-- <button *ngIf="btnDelet" class="btn" (click)="removePlayer(i)">Suppimer</button> -->
+    </div>
+</div>

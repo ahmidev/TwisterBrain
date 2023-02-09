@@ -1,0 +1,165 @@
+.containerHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.logo {
+    /* position:relative; */
+    max-width: 75vw;
+    max-height: 50vh;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.btnHomes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+.btnRegles,
+.btnJouer {
+    height: 8vh;
+    width: 75vw;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: grab;
+    cursor: pointer;
+    border: none;
+}
+
+.btnJouer {
+    background-color: var(--colorJaune);
+}
+
+.btnRegles {
+    background-color: var(--colorOrange);
+}
+
+.btnParametres {
+    min-height: 20px;
+    max-height: 3vh; 
+    min-width: 100px;
+    max-width: 40vw;
+    border-radius: 10px;
+    position: center;
+    background-color: var(--colorBleu);
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btnJouer {
+    background-color: var(--colorJaune);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btnJouer:hover {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem var(--colorJaune),
+        0 0 0.8rem var(--colorJaune),
+        0 0 2.8rem var(--colorJaune),
+        inset 0 0 1.3rem var(--colorJaune);
+    transition: all 0.3s;
+}
+
+.btnRegles {
+    background-color: var(--colorOrange);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btnRegles:hover {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem var(--colorOrange),
+        0 0 0.8rem var(--colorOrange),
+        0 0 2.8rem var(--colorOrange),
+        inset 0 0 1.3rem var(--colorOrange);
+    transition: all 0.3s;
+}
+
+ @media (min-width : 600px) {
+    .containerHome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .logo {
+        position: relative;
+        max-width: 75vw;
+        max-height: 50vh;
+        display: block;
+        margin: 0 auto;
+
+    }
+
+    .btnHomes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5vh;
+    }
+
+    .btnRegles,
+    .btnJouer {
+        height: 8vh;
+        width: 25vw;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btnJouer {
+        background-color: var(--colorJaune);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .btnJouer:hover {
+        box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem var(--colorJaune),
+            0 0 0.8rem var(--colorJaune),
+            0 0 2.8rem var(--colorJaune),
+            inset 0 0 1.3rem var(--colorJaune);
+        transition: all 0.3s;
+    }
+
+    .btnRegles {
+        background-color: var(--colorOrange);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .btnRegles:hover {
+        box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem var(--colorOrange),
+            0 0 0.8rem var(--colorOrange),
+            0 0 2.8rem var(--colorOrange),
+            inset 0 0 1.3rem var(--colorOrange);
+        transition: all 0.3s;
+    }
+
+    .btnParametres {
+        height: 3vh;
+        width: 8vw;
+        border-radius: 10px;
+        position: center;
+        background-color: var(--colorBleu);
+        color: white;
+        font-size: 12px;
+        cursor: pointer;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+} 

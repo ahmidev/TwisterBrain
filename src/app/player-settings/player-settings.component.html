@@ -1,0 +1,44 @@
+<div class="container">
+  <app-player></app-player>
+
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <fieldset>
+      <legend>Choix du ou des joueurs</legend>
+      <div class="player">
+        <div class="selectContainer">
+          <img [src]="avatars" alt="" />
+          <div class="select">
+            <label class="avatar" for="avatar">Choisir votre avatar</label>
+            <select name="avatar" formControlName="avatar" id="avatar" #select [(ngModel)]="avatars">
+              <option value="assets/avatar1.svg" [style.background-color]="'#0798b1'">Avatar 1</option>
+              <option value="assets/avatar5.svg" [style.background-color]="'#88cb53'">Avatar 2</option>
+              <option value="assets/avatar3.svg" [style.background-color]="'#f05dd0'">Avatar 3</option>
+              <option value="assets/avatar4.svg" [style.background-color]="'#d8230a'">Avatar 4</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputPseudo">
+          <label for="pseudo">Pseudo</label>
+          <div class="inputField">
+            <p *ngIf="form.get('pseudo')?.errors && form.get('pseudo')?.touched">Votre pseudo doit contenir au <br>
+              minimum 2 caractères</p>
+            <input type="text" formControlName="pseudo" #pseudo placeholder="Inscrire votre pseudo" />
+          </div>
+        </div>
+        <button *ngIf="players.length !==2" class="btnValid" type="submit" [disabled]="form.invalid"
+          (click)="addPlayers(pseudo, select)">Ajouter</button>
+      </div>
+    </fieldset>
+  </form>
+
+  <!-- <button class="playBtn btnValid" [disabled]="players.length === 0" routerLink="/game">Game</button> -->
+
+  <div class="btn2" *ngIf="players.length">
+    <!-- 4spans pour faire mes 4 contours de mon bouton  -->
+    <span class="linemoove"></span>
+    <span class="linemoove"></span>
+    <span class="linemoove"></span>
+    <span class="linemoove"></span>
+    <span [routerLink]="['/game']"> Game </span>
+  </div>
+</div>
