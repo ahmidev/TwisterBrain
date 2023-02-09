@@ -15,7 +15,6 @@ import {ConfettisService} from '../services/confettis.service';
 export class FinalComponent implements OnInit {
   //tableau pour mes joueurs
     players:Player[]= this.playersService.players;
-
     btnDelet = false;
 
 constructor (public confettisService: ConfettisService, private playersService: 
@@ -29,15 +28,14 @@ ngOnInit(){
   
   showConfetti() {
   let canvas = document.querySelector('.canvas') as any;
-  let confetti = confettis.create(canvas, { resize: true }); // resize: Booléen pour autoriser la taille du canvas s'adapte à ton format de page La taille du canvas ne sera pas modifiée 
+  let confetti = confettis.create(canvas, { resize: true }); 
+  // resize: Booléen pour autoriser la taille du canvas s'adapte à ton format
+  // de page La taille du canvas ne sera pas modifiée 
   confetti({
     spread: 40,  //jusqu'où peuvent aller les confettis, en degrés. 
-    startVelocity: 70, //vitesse des confettis qui commenceront à défiler, en pixels
-    particleCount: 500, // nombre de confettis
-    gravity: 0.5,    
-   origin: { y: 0.5 }
-   
+    startVelocity: 40, //vitesse des confettis qui commenceront à défiler, en pixels
+    particleCount: 100, // nombre de confettis 
+    origin: { y: 0.5 } 
   });
   }
-
 }

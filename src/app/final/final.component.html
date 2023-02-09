@@ -5,16 +5,16 @@
     <div class="joueur" *ngFor="let player of players">
         <img class="avatar" src={{player.avatar}}>
         <p class="txt_score">{{player.score}}</p>
-    </div> -->
+    </div> 
 </div>
 
 <!-- pour mon centre bravo + avatar  -->
 <div class="main" (click)="showConfetti()">
     <div class="bravat">
-        <!-- <p class="bravo"> bravo </p> -->
+        <p class="bravo"> bravo </p> 
         <img src={{players[2].avatar}}>
-        <div class="resul-score">Score : {{players[2].score}}</div>
-    </div>
+        <div class="resul-score">Score :{{players[2].score}}</div>
+ </div>
     <canvas class="canvas"></canvas> 
     <!-- ajout d'un canvas pour mon API -->
 </div>

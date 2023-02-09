@@ -7,40 +7,7 @@ import { Player } from '../models/player-model';
 })
 export class PlayersService {
 
-  // public pseudo: string = "";
-  // public avatar: string = "";
-  // public score: number = 0;
-  // public color: string = "";
-  // public title?: string = "";
-  
-
-  
-  players: Player[] = [
-    // {
-    //   id: 0,
-    //   pseudo: 'joueur 1',
-    //   avatar: '/assets/avatar1.svg',
-    //   score: 5
-    // },
-    // {
-    //   id: 1,
-    //   pseudo: 'joueur 2',
-    //   avatar: '/assets/avatar2.svg',
-    //   score: 30
-    // },
-    // {
-    //   id: 2,
-    //   pseudo: 'joueur 3',
-    //   avatar: '/assets/avatar3.svg',
-    //   score: 10
-    // },
-    // {
-    //   id: 3,
-    //   pseudo: 'joueur 4',
-    //   avatar: '/assets/avatar4.svg',
-    //   score: 200
-    // }
-  ];
+  players: Player[] = [];
   constructor() {
   }
   playerList = new BehaviorSubject(this.players)
@@ -86,40 +53,6 @@ export class PlayersService {
     // renoyer le joueur qui a le plus de points
     //parcourir tableau de joueur en integrant conditions
     
-
-
-    // );
-
-    // tableau.forEach(element => console.log(element));
-    // si le score P1 est > P2 P3 P4 || 
-  // if (this.players[0].score > this.players[1].score && this.players[2].score && this.players[3].score) {
-    //   console.log(this.players[0])
-      
-    // }else if (this.players[1].score > this.players[0].score && this.players[2].score && this.players[3].score) {
-    //   console.log(this.players[1])
-     
-    // }else if (this.players[2].score > this.players[0].score && this.players[1].score && this.players[3].score) {
-    //   console.log(this.players[2])
-      
-    // }else if (this.players[3].score > this.players[0].score && this.players[2].score && this.players[1].score) {
-    //   console.log(this.players[3])
-     
-    // }
-    // return winner
-    // si le score P2 est > P1 P3 P4 || 
-    // return winner
-    // si le score P3 est > P2 P1 P4 ||
-    // return winner
-    // si le score P4 est > P2 P3 P1 || 
-
-    // return winner
-    //
-
-
-    // parcourir les joueurs
-    // si score superieur aux autres
-
-
   }
 
 }
