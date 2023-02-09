@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
+import { Player } from '../models/player-model';
 // import { Question } from 'src/app/question.interface';
 // import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
@@ -25,6 +26,9 @@ export class QuestionComponent implements OnInit, OnDestroy {
   idTimer: any;
   isFinished: boolean = false;
   isClic: boolean = false;
+  player1:Player = this.playerService.players[0];
+  player2:Player = this.playerService.players[1];
+  currentPlayer : Player = this.player1;
   
   
 
@@ -47,7 +51,8 @@ export class QuestionComponent implements OnInit, OnDestroy {
     // });
   }
   ngOnInit(): void {
-
+    console.log(this.player1)
+    console.log(this.player2)
     if(!this.playerService.players.length){
       this.router.navigateByUrl("/home");
       clearInterval(this.idTimer);
@@ -122,7 +127,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
         this.ngOnInit();
         this.timeLeft = 15;
         this.partie++
-        if (this.partie >= 10) {
+        if (this.partie >= 10 && this.currentPlayer==this.player2) {
           this.router.navigateByUrl("/final");
         }
       }
@@ -133,11 +138,13 @@ export class QuestionComponent implements OnInit, OnDestroy {
     
     if(this.isClic)return;
     this.isClic = true;
+
     clearInterval(this.idTimer); // on stoppe le timer
     this.isFinished = false; // on repasse l'expression de la fonction setCountdown a false
-    console.log(box)
+  
     this.partie++
     console.log(this.partie);
+
     if (this.partie <= 10) {
       console.log(this.partie);
       for (let b of box) {
@@ -148,12 +155,12 @@ export class QuestionComponent implements OnInit, OnDestroy {
         if (b.textContent == this.correct_answer) {
           b.style.background = 'green'
         } };
-      }
-      if (boxIndiv.textContent == this.correct_answer) {
-        boxIndiv.style.background = 'green';
-        this.playerService.players[0].score += 10;
-      } else {
-        boxIndiv.style.background = 'red'
+        if (boxIndiv.textContent == this.correct_answer) {
+          boxIndiv.style.background = 'green';
+          this.currentPlayer.score += 10;
+        } else {
+          boxIndiv.style.background = 'red'
+        }
       }
         this.timeLeft = 15; // on repasse la timer à 10s une fois la question rechargée
       setTimeout(() => {
@@ -163,10 +170,16 @@ export class QuestionComponent implements OnInit, OnDestroy {
         for (let b of box) {
           b.style.background = ''
         }
-        if (this.partie == 10) {
-          this.router.navigateByUrl("/final");
+        if (this.partie == 10 && this.currentPlayer==this.player1 ) {
+         
+          this.currentPlayer = this.player2;
           clearInterval(this.idTimer);
           this.partie = 0;
+        }
+        if(this.partie==10 && this.currentPlayer==this.player2){
+          clearInterval(this.idTimer);
+          this.partie = 0;
+          this.router.navigateByUrl("/final");
         }
       }, 2000)
 
