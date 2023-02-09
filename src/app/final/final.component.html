@@ -5,17 +5,29 @@
     <div class="joueur" *ngFor="let player of players">
         <img class="avatar" src={{player.avatar}}>
         <p class="txt_score">{{player.score}}</p>
+<<<<<<< HEAD
     </div> 
+=======
+    </div>
+>>>>>>> d2531d45b9061b1291674301cb9a441ab4f84f1c
 </div>
 
 <!-- pour mon centre bravo + avatar  -->
 <div class="main" (click)="showConfetti()">
     <div class="bravat">
+<<<<<<< HEAD
         <p class="bravo"> bravo </p> 
         <img src={{players[2].avatar}}>
         <div class="resul-score">Score :{{players[2].score}}</div>
  </div>
     <canvas class="canvas"></canvas> 
+=======
+        <!-- <p class="bravo"> bravo </p> -->
+        <img src={{winnerAvatar}}>
+        <div class="resul-score">Score : {{winnerScore}}</div>
+    </div>
+    <canvas class="canvas"></canvas>
+>>>>>>> d2531d45b9061b1291674301cb9a441ab4f84f1c
     <!-- ajout d'un canvas pour mon API -->
 </div>
 
@@ -26,7 +38,7 @@
             <span class="linemoove"></span> <!-- 4spans pour faire mes 4 contours de mon bouton  -->
             <span class="linemoove"></span>
             <span class="linemoove"></span>
-            <span [routerLink]="['/game']">Game</span>
+            <span (click)="rejouer()">Game</span>
         </div>
     </div>
 </div>

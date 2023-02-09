@@ -48,6 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 }
 
 .question_title {
@@ -108,6 +109,7 @@
     height: 10vh;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
   }
 
 .answers {

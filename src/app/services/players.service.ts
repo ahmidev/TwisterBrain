@@ -44,15 +44,20 @@ export class PlayersService {
 
   }
   winnerPlayer() {
+    // renvoyer le joueur qui a le plus de points
     const winner = this.players.sort((a,b)=> {
       return b.score - a.score;
     })
     // console.log("Vainqueur" + winner[0]);
+<<<<<<< HEAD
     return "Vainqueur " + winner[0].pseudo
 
     // renoyer le joueur qui a le plus de points
     //parcourir tableau de joueur en integrant conditions
     
+=======
+    return winner[0]
+>>>>>>> d2531d45b9061b1291674301cb9a441ab4f84f1c
   }
 
 }
