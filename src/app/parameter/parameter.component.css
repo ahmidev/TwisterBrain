@@ -5,13 +5,14 @@ button {
 }
 
 body {
-    overflow: auto;
+    overflow: hidden;
 }
 
 form {
     width: 100vw;
     height: 100vh;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -184,6 +185,9 @@ button {
     }
 
     .mid {
-        padding-top: 10vh;
+        position: absolute;
+        top: 50vh;
+        transform: translateY(-50vh);
+        /* padding-top: 10vh; */
     }
 }
