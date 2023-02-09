@@ -12,7 +12,7 @@ import { QuestionService } from '../services/question.service';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css'],
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent implements OnInit, OnDestroy {
 
   datAquestion: any;
   category: any;
@@ -25,6 +25,8 @@ export class QuestionComponent implements OnInit {
   idTimer: any;
   isFinished: boolean = false;
   isClic: boolean = false;
+  
+  
 
   @ViewChildren('box') boxx!: ElementRef<HTMLDivElement>[];
   constructor(
@@ -46,7 +48,10 @@ export class QuestionComponent implements OnInit {
   }
   ngOnInit(): void {
 
-
+    if(!this.playerService.players.length){
+      this.router.navigateByUrl("/home");
+      clearInterval(this.idTimer);
+    }
     this.startCountdown();
 
     // this.getTraduction();
@@ -105,6 +110,7 @@ export class QuestionComponent implements OnInit {
 
 
   startCountdown() {
+    
     if (this.isFinished) { // expression a false a la première lecture
       return
     };// au prochain tour de lecture la fonction sortira grace a la ligne 78
@@ -124,6 +130,7 @@ export class QuestionComponent implements OnInit {
   };
 
   reponse(box: HTMLElement[], boxIndiv: HTMLElement) {
+    
     if(this.isClic)return;
     this.isClic = true;
     clearInterval(this.idTimer); // on stoppe le timer
@@ -158,9 +165,14 @@ export class QuestionComponent implements OnInit {
         }
         if (this.partie == 10) {
           this.router.navigateByUrl("/final");
+          clearInterval(this.idTimer);
+          this.partie = 0;
         }
       }, 2000)
 
+    }
+    ngOnDestroy(): void {
+   
     }
   }
   //lors du clic sur la reponse on verifie si elle est egale à la reponse correction
