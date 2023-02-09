@@ -201,3 +201,7 @@ button.btnValid:disabled {
     background: rgb(166, 165, 165);
     cursor: not-allowed;
 }
+
+.test{
+    width: 200px;
+}
