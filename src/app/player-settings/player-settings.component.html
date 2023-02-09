@@ -20,15 +20,17 @@
         <div class="inputPseudo">
           <label for="pseudo">Pseudo</label>
           <div class="inputField">
-            <p *ngIf="form.get('pseudo')?.errors && form.get('pseudo')?.touched">Votre pseudo  doit contenir au <br> minimum 2 caractères</p>
+            <p *ngIf="form.get('pseudo')?.errors && form.get('pseudo')?.touched">Votre pseudo doit contenir au <br>
+              minimum 2 caractères</p>
             <input type="text" formControlName="pseudo" #pseudo placeholder="Inscrire votre pseudo" />
           </div>
         </div>
-        <button class="btnValid" type="submit" [disabled]="form.invalid" (click)="addPlayers(pseudo, select)">Ajouter</button>
+        <button class="btnValid" type="submit" [disabled]="form.invalid"
+          (click)="addPlayers(pseudo, select)">Ajouter</button>
       </div>
     </fieldset>
   </form>
-   
+
   <!-- <button class="playBtn btnValid" [disabled]="players.length === 0" routerLink="/game">Game</button> -->
 
   <div class="btn2">
@@ -37,7 +39,6 @@
     <span class="linemoove"></span>
     <span class="linemoove"></span>
     <span class="linemoove"></span>
-    <span [routerLink]="['/game']">  Game  </span>
+    <span [routerLink]="['/game']"> Game </span>
   </div>
 </div>
-

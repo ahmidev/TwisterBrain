@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
-import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { Route, Router, Routes } from '@angular/router';
-import { tap } from 'rxjs';
-import { Question } from 'src/app/question.interface';
-import { Player } from '../models/player-model';
+// import { ThisReceiver } from '@angular/compiler';
+import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
+// import { tap } from 'rxjs';
+// import { Question } from 'src/app/question.interface';
+// import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
 import { QuestionService } from '../services/question.service';
 @Component({
@@ -117,6 +117,9 @@ export class QuestionComponent implements OnInit {
         this.ngOnInit();
         this.timeLeft = 10;
         this.partie++
+        if (this.partie == 10) {
+          this.router.navigateByUrl("/final");
+        }
       }
     }, 1000)
   };
@@ -185,4 +188,4 @@ export class QuestionComponent implements OnInit {
   //   })
   //   console.log('dommage');
   // }
-}
+
