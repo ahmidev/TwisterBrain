@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
 import { ApiQuestionService } from './api-question.service';
@@ -13,10 +13,10 @@ export interface Response {
 
 export class QuestionService{
 
-  public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
-  public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
-  public mediumUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
-  public hardUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
+  // public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
+  // public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
+  // public mediumUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
+  // public hardUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
   public traductionUrl: string = 'https://api.deepl.com/v2/translate?auth_key=6c3cea4d-d302-e316-59c3-35717d46dfb0&target_lang=fr&text='
   datas: any;
   questions: any;
@@ -35,16 +35,16 @@ export class QuestionService{
     )
 
   }
-  getMediumQuestion() {
-    this.http.get(this.mediumUrl).subscribe(data => {
-      return data
-    });
-  }
-  getHardQuestion() {
-    this.http.get(this.hardUrl).subscribe(data => {
-      return data
-    });
-  }
+  // getMediumQuestion() {
+  //   this.http.get(this.mediumUrl).subscribe(data => {
+  //     return data
+  //   });
+  // }
+  // getHardQuestion() {
+  //   this.http.get(this.hardUrl).subscribe(data => {
+  //     return data
+  //   });
+  // }
   getTraduction(paramToTranslate: string) {
     return this.http.get<any>(`this.traductionUrl${paramToTranslate}`).pipe(
       tap((data) => {

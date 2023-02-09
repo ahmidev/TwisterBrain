@@ -27,8 +27,6 @@ export class PlayerSettingsComponent implements OnInit {
   }
 
   addPlayers(pseudo:HTMLInputElement, avatar:HTMLSelectElement){
-    
-    
     this.playersService.addPlayer(pseudo.value,avatar.value)
   //remise a zéro à chaque clic des champs dans le formulaire
    this.avatars = ""
@@ -39,6 +37,7 @@ export class PlayerSettingsComponent implements OnInit {
     console.log(this.form)
     console.log(this.playersService.players)
   }
+  
   submit() {
     
   

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { QuestionService } from '../services/question.service';
 
 @Component({
@@ -6,20 +6,11 @@ import { QuestionService } from '../services/question.service';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent implements OnInit {
+export class GameComponent {
   btnDelet = false;
-  questions:any;
-  constructor(private questionService:QuestionService){
-    
-  }
-  
-  ngOnInit(): void {
-    // this.questionService.getEasyQuestion().subscribe(data=>{
-  
-    //   this.questions =data.results
-      // console.log(this.questions)
-    // })
+  questions: any;
+  constructor(private questionService: QuestionService) {
 
-    
   }
+
 }

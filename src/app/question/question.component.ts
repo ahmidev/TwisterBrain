@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
-import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { Route, Router, Routes } from '@angular/router';
+// import { ThisReceiver } from '@angular/compiler';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
 import { tap } from 'rxjs';
-import { Player } from '../models/player-model';
+// import { Question } from 'src/app/question.interface';
+// import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
 import { QuestionService } from '../services/question.service';
 @Component({
@@ -12,7 +13,6 @@ import { QuestionService } from '../services/question.service';
   styleUrls: ['./question.component.css'],
 })
 export class QuestionComponent implements OnInit, OnDestroy {
-
 
   datAquestion: any;
   category: any;
@@ -27,7 +27,6 @@ export class QuestionComponent implements OnInit, OnDestroy {
   isClic: boolean = false;
   
   
-
 
   @ViewChildren('box') boxx!: ElementRef<HTMLDivElement>[];
   constructor(
@@ -176,7 +175,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
    
     }
   }
-  //lors du clic sur la reponse on verifie si elle egale à la reponse correction
+  //lors du clic sur la reponse on verifie si elle est egale à la reponse correction
   //si c'est le cas on passe la div en vert, si ce nest pas le cas passe la div en rouge et la div correct en vert
 
   // console.log(box.textContent);
