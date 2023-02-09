@@ -1,75 +1,98 @@
-.header {
+.container {
     width: 100%;
-    height: 25vh;
+    height: 100%;
+    /* background-color: var(--colorJaune);  */
+    /*backrgound 1joueur*/
+}
+.header {
+    height: 20vh;
     display: flex;
     flex-direction: row;
 }
-/*******Confettis*******/
+
+.txt_score {
+    color: black;
+
+}
+
 .main {
-    height: 50vh;
+    width: 100%;
+    height: 55vh;
     display: flex;
+    flex-wrap: wrap ;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    -webkit-text-stroke: 0.5px rgb(102, 64, 241); /*contour du texte bravo */
+    justify-content: space-around;
+    /* -webkit-text-stroke: 0.3px rgb(237, 237, 230); */
+    /*contour du texte bravo */
 }
-.bravo {
+
+.bravat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;     
+}
+
+ .bravo {
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: 3rem;
     /*texte clignottant*/
-    animation-duration: 10s;
+     animation-duration: 10s;
     animation-name: clignote;
     animation-iteration-count: infinite;
     transition: ease-out;
     /*degradé texte*/
-    background: linear-gradient(100deg, #D61D04 0%, #F7E927 50%, #02297E 100%);
+    background: linear-gradient(100deg, #D61D04 15%, #F7E927 50%, #02297E 100%);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* dimension de mon canvas */
-.canvas{
-  height: 100%;
-  width: 100%;
-  position: fixed;
+img {
+    width: 45%;
+}
+.resul-score{
+    font-size: 30px;
+    color: #0f0e01;
+   background-color: #e1a80b;
+   padding: 5px 40px;
+   border-radius: 25px;
 }
 
-/*avatar qui ckignotte toutes les 20%*/
-@keyframes clignote {
+/* dimension de mon canvas */
+.canvas {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+/*bravo qui ckignotte toutes les 20%*/
+/* @keyframes clignote {
     0% {
         opacity: 1;
     }
+
     20% {
         opacity: 0;
     }
+
     40% {
         opacity: 1;
     }
+
     60% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
-}
+} */
+
 /******** boutons ***************/
 .footer {
-    width: 100%;
     height: 25vh;
-    display: flex;
-    flex-direction: column;
-}
-/* btn1 Rejouer */
-.boutons {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    text-transform: uppercase;
-    overflow: hidden;
-    text-decoration: none;
-    padding: 15px 20px;
-    transition: 2s ease-in;
-    font-size: 1rem;
 }

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 // import { ThisReceiver } from '@angular/compiler';
-import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-// import { tap } from 'rxjs';
+import { tap } from 'rxjs';
+import { Player } from '../models/player-model';
 // import { Question } from 'src/app/question.interface';
 // import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
@@ -12,8 +13,7 @@ import { QuestionService } from '../services/question.service';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css'],
 })
-export class QuestionComponent implements OnInit {
-
+export class QuestionComponent implements OnInit, OnDestroy {
 
   datAquestion: any;
   category: any;
@@ -22,9 +22,14 @@ export class QuestionComponent implements OnInit {
   question: any;
   timer: any;
   partie: number = 1;
-  timeLeft: number = 10;
+  timeLeft: number = 15;
   idTimer: any;
   isFinished: boolean = false;
+  isClic: boolean = false;
+  player1:Player = this.playerService.players[0];
+  player2:Player = this.playerService.players[1];
+  currentPlayer : Player = this.player1;
+
 
 
   @ViewChildren('box') boxx!: ElementRef<HTMLDivElement>[];
@@ -46,8 +51,12 @@ export class QuestionComponent implements OnInit {
     // });
   }
   ngOnInit(): void {
-
-
+    console.log(this.player1)
+    console.log(this.player2)
+    if(!this.playerService.players.length){
+      this.router.navigateByUrl("/home");
+      clearInterval(this.idTimer);
+    }
     this.startCountdown();
 
     // this.getTraduction();
@@ -64,10 +73,10 @@ export class QuestionComponent implements OnInit {
         this.category = data.translations[0].text
       })
       this.correct_answer = data.results[0].correct_answer;
-      this.http.get<any>(`${this.questionService.traductionUrl}${this.correct_answer}`).subscribe(data => {
-        console.log(data.translations[0].text);
-        this.correct_answer = data.translations[0].text
-      })
+      // this.http.get<any>(`${this.questionService.traductionUrl}${this.correct_answer}`).subscribe(data => {
+      //   console.log(data.translations[0].text);
+      //   this.correct_answer = data.translations[0].text
+      // })
       console.log(data);
       this.incorrect_answers = data.results[0].incorrect_answers;
       // this.http.get<any>(`${this.questionService.traductionUrl}${this.incorrect_answers}`).subscribe(data => {
@@ -106,6 +115,7 @@ export class QuestionComponent implements OnInit {
 
 
   startCountdown() {
+
     if (this.isFinished) { // expression a false a la première lecture
       return
     };// au prochain tour de lecture la fonction sortira grace a la ligne 78
@@ -115,21 +125,31 @@ export class QuestionComponent implements OnInit {
         this.timeLeft--;
       } else {
         this.ngOnInit();
-        this.timeLeft = 10;
+        this.timeLeft = 15;
         this.partie++
-        if (this.partie == 10) {
+        if(this.playerService.players.length == 2){
+        if (this.partie >= 10 && this.currentPlayer==this.player2) {
           this.router.navigateByUrl("/final");
+        }}else {
+          if (this.partie == 10) {
+            this.router.navigateByUrl("/final");
+          }
         }
       }
     }, 1000)
   };
 
   reponse(box: HTMLElement[], boxIndiv: HTMLElement) {
+
+    if(this.isClic)return;
+    this.isClic = true;
+
     clearInterval(this.idTimer); // on stoppe le timer
     this.isFinished = false; // on repasse l'expression de la fonction setCountdown a false
-    console.log(box)
+
     this.partie++
     console.log(this.partie);
+
     if (this.partie <= 10) {
       console.log(this.partie);
       for (let b of box) {
@@ -140,22 +160,49 @@ export class QuestionComponent implements OnInit {
         if (b.textContent == this.correct_answer) {
           b.style.background = 'green'
         } };
+        if (boxIndiv.textContent == this.correct_answer) {
+          boxIndiv.style.background = 'green';
+          this.currentPlayer.score += 10;
+        } else {
+          boxIndiv.style.background = 'red'
+        }
       }
-        this.timeLeft = 10; // on repasse la timer à 10s une fois la question rechargée
+        this.timeLeft = 15; // on repasse la timer à 10s une fois la question rechargée
       setTimeout(() => {
-        this.ngOnInit()
+        this.ngOnInit();
+        this.isClic = false;
         boxIndiv.style.background = ''
         for (let b of box) {
           b.style.background = ''
         }
-        if (this.partie == 10) {
-          this.router.navigateByUrl("/final");
+
+
+        if(this.playerService.players.length == 2){
+        if (this.partie == 10 && this.currentPlayer==this.player1 ) {
+
+          this.currentPlayer = this.player2;
+          clearInterval(this.idTimer);
+          this.partie = 0;
         }
-      }, 3000)
+        if(this.partie==10 && this.currentPlayer==this.player2){
+          clearInterval(this.idTimer);
+          this.partie = 0;
+          this.router.navigateByUrl("/final");
+        }} else {
+          if (this.partie == 10) {
+            this.router.navigateByUrl("/final");
+            clearInterval(this.idTimer);
+            this.partie = 0;
+          }
+        }
+      }, 2000)
+
+    }
+    ngOnDestroy(): void {
 
     }
   }
-  //lors du clic sur la reponse on verifie si elle egale à la reponse correction
+  //lors du clic sur la reponse on verifie si elle est egale à la reponse correction
   //si c'est le cas on passe la div en vert, si ce nest pas le cas passe la div en rouge et la div correct en vert
 
   // console.log(box.textContent);
@@ -188,4 +235,3 @@ export class QuestionComponent implements OnInit {
   //   })
   //   console.log('dommage');
   // }
-

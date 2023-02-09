@@ -6,10 +6,10 @@
       <legend>Choix du ou des joueurs</legend>
       <div class="player">
         <div class="selectContainer">
-          <img [src]="avatar" alt="" />
+          <img [src]="avatars" alt="" />
           <div class="select">
             <label class="avatar" for="avatar">Choisir votre avatar</label>
-            <select name="avatar" formControlName="avatar" id="avatar" #select [(ngModel)]="avatar">
+            <select name="avatar" formControlName="avatar" id="avatar" #select [(ngModel)]="avatars">
               <option value="assets/avatar1.svg" [style.background-color]="'#0798b1'">Avatar 1</option>
               <option value="assets/avatar2.svg" [style.background-color]="'#88cb53'">Avatar 2</option>
               <option value="assets/avatar3.svg" [style.background-color]="'#f05dd0'">Avatar 3</option>
@@ -17,6 +17,7 @@
             </select>
           </div>
         </div>
+
         <div class="inputPseudo">
           <label for="pseudo">Pseudo</label>
           <div class="inputField">
@@ -25,7 +26,7 @@
             <input type="text" formControlName="pseudo" #pseudo placeholder="Inscrire votre pseudo" />
           </div>
         </div>
-        <button class="btnValid" type="submit" [disabled]="form.invalid"
+        <button *ngIf="players.length !==2" class="btnValid" type="submit" [disabled]="form.invalid"
           (click)="addPlayers(pseudo, select)">Ajouter</button>
       </div>
     </fieldset>
@@ -33,7 +34,7 @@
 
   <!-- <button class="playBtn btnValid" [disabled]="players.length === 0" routerLink="/game">Game</button> -->
 
-  <div class="btn2">
+  <div class="btn2" *ngIf="players.length">
     <!-- 4spans pour faire mes 4 contours de mon bouton  -->
     <span class="linemoove"></span>
     <span class="linemoove"></span>
