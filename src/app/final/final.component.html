@@ -12,8 +12,11 @@
 <div class="main" (click)="showConfetti()">
     <div class="bravat">
         <!-- <p class="bravo"> bravo </p> -->
-        <img src={{winnerAvatar}}>
-        <div class="resul-score">Score : {{winnerScore}}</div>
+        <img src={{winnerAvatar1}}>
+        <div class="resul-score">Score : {{winnerScore1}}</div>
+        <img *ngIf="equality" src={{winnerAvatar2}}>
+        <div class="resul-score">Score : {{winnerScore2}}</div>
+        <p *ngIf="equality">Egalité !</p>
     </div>
     <canvas class="canvas"></canvas>
     <!-- ajout d'un canvas pour mon API -->

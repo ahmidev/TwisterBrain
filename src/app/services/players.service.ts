@@ -12,9 +12,9 @@ export class PlayersService {
   // public score: number = 0;
   // public color: string = "";
   // public title?: string = "";
-  
 
-  
+
+
   players: Player[] = [
     // {
     //   id: 0,
@@ -82,7 +82,7 @@ export class PlayersService {
       return b.score - a.score;
     })
     // console.log("Vainqueur" + winner[0]);
-    return winner[0]
+    return winner
   }
 
 }
